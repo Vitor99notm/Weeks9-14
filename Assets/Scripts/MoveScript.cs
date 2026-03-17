@@ -5,10 +5,10 @@ public class MoveScript : MonoBehaviour
 {
     public Transform spriteTransform;
     public float speed = 1f;
+    public float speedDelay = 1;
 
     Coroutine spriteMove;
     Coroutine spriteScale;
-    Coroutine spriteRotate;
 
     void Start()
     {
@@ -17,9 +17,25 @@ public class MoveScript : MonoBehaviour
     void Update()
     {
         StartCoroutine(ScaleSprite());
+        StartCoroutine(MoveSprite());
     }
 
-    IEnumerator ScaleSprite()
+    IEnumerator MoveSprite()
+    {
+        while (speed < 3)
+        {
+            spriteTransform.transform.position = Vector3.one * speed;
+            speed++;
+            yield return new WaitForSeconds(speedDelay);
+			if (speed >= 3)
+            {
+                speed = speed * -1f;
+            }
+        }
+
+	}
+
+	IEnumerator ScaleSprite()
     {
         float t = 0;
 
