@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Grower : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public Transform treeTransform;
     void Start()
     {
         
@@ -12,5 +12,16 @@ public class Grower : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void GrowTree()
+    {
+        float t = 0;
+
+        while(t < 1){
+
+            t += Time.deltaTime;
+            treeTransform.transform.localScale = Vector3.one * t;
+        }
     }
 }
