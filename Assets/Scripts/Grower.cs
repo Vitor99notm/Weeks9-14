@@ -6,6 +6,11 @@ public class Grower : MonoBehaviour
     public Transform treeTransform;
     public Transform appleTransform;
     public float appleDelay = 1;
+
+    Coroutine theGrowingCoroutine;
+    Coroutine theTreeCoroutine;
+    Coroutine theAppleCoroutine;
+
     void Start()
     {
         treeTransform.transform.localScale = Vector2.zero;
@@ -21,14 +26,28 @@ public class Grower : MonoBehaviour
     public void StartTreeGrowing()
     {
         //StartCoroutine(GrowTree());
-        StartCoroutine(StartGrowing());
+
+        if(theGrowingCoroutine != null)
+        {
+            StopCoroutine(theGrowingCoroutine);
+        }
+        if (theTreeCoroutine != null)
+        {
+            StopCoroutine(theTreeCoroutine);
+        }
+        if (theAppleCoroutine != null)
+        {
+            StopCoroutine(theAppleCoroutine);
+        }
+
+		theGrowingCoroutine = StartCoroutine(StartGrowing());
 
 	}
 
     IEnumerator StartGrowing()
     {
-        yield return StartCoroutine(GrowTree());
-        yield return StartCoroutine(GrowApple());
+        yield return theTreeCoroutine = StartCoroutine(GrowTree());
+        yield return theAppleCoroutine = StartCoroutine(GrowApple());
     }
 
 	IEnumerator GrowTree()
