@@ -18,11 +18,18 @@ public class Grower : MonoBehaviour
     {
         
     }
-
     public void StartTreeGrowing()
     {
-		StartCoroutine(GrowTree());
+        //StartCoroutine(GrowTree());
+        StartCoroutine(StartGrowing());
+
 	}
+
+    IEnumerator StartGrowing()
+    {
+        yield return StartCoroutine(GrowTree());
+        yield return StartCoroutine(GrowApple());
+    }
 
 	IEnumerator GrowTree()
     {
@@ -40,7 +47,15 @@ public class Grower : MonoBehaviour
 
         yield return new WaitForSeconds(appleDelay);
 
-        t = 0;
+		StartCoroutine(GrowApple());
+
+	}
+
+	IEnumerator GrowApple()
+    {
+        float t = 0;
+		appleTransform.transform.localScale = Vector2.zero;
+
 
 		while (t < 1)
 		{
@@ -49,5 +64,5 @@ public class Grower : MonoBehaviour
 			appleTransform.transform.localScale = Vector3.one * t;
 			yield return null;
 		}
-	}
+    }
 }
