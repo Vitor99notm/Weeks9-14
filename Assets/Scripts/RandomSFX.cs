@@ -3,16 +3,16 @@ using UnityEngine;
 
 public class RandomSFX : MonoBehaviour
 {
-
+    //SFX Template
     public AudioSource SFX;
+    //List for differnt SFX
     public List<AudioClip> SFXRandom;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         
@@ -20,6 +20,7 @@ public class RandomSFX : MonoBehaviour
 
     public void randomSFX() 
     {
+        //Pick between the different clips on the list and apply it to the template.
         SFX.clip = SFXRandom[Random.Range(0, 3)];
         SFX.Play();
     }
