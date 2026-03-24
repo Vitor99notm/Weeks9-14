@@ -5,6 +5,7 @@ public class ControllerInput : MonoBehaviour
 {
     public float speed = 5;
     public Vector2 movement;
+    public Animator playerAnimator;
     public AudioSource SFX;
     void Start()
     {
@@ -16,12 +17,15 @@ public class ControllerInput : MonoBehaviour
     {
         transform.position += (Vector3)movement * speed * Time.deltaTime;
         //transform.position = movement;
+
     }
 
     public void OnMove(InputAction.CallbackContext context)
     {
        movement = context.ReadValue<Vector2>();
+       playerAnimator.SetBool("isRunning", true);
     }
+
 
     public void OnAttack(InputAction.CallbackContext context) 
     {
