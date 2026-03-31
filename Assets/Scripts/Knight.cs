@@ -1,8 +1,10 @@
+using Unity.Cinemachine;
 using UnityEngine;
 
 public class Knight : MonoBehaviour
 {
     public AudioSource SFX;
+    public CinemachineImpulseSource impulseSource;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -19,5 +21,6 @@ public class Knight : MonoBehaviour
     {
         //Debug.Log("FootStep");
         SFX.Play();
+        impulseSource.GenerateImpulse();
     }
 }
