@@ -5,8 +5,9 @@ public class Zombie : MonoBehaviour
 
     //Keeps track of the players current position so that later code can use it to make zombie follow the player
     public Transform playerPos;
-    public float speed = 0.1f;
-    public float t;
+    public float speed = 1f;
+
+    
 
     void Start()
     {
