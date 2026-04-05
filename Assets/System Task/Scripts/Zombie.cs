@@ -7,7 +7,6 @@ public class Zombie : MonoBehaviour
     public Transform playerPos;
     public float speed = 1f;
 
-    
 
     void Start()
     {

@@ -104,5 +104,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d547847ca4cd7b4d8a0f68084802a20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Zombie
-  playerPos: {fileID: 5036939286482999234, guid: 79600e7a0b3a44f4eacd2f1a8562c2c4, type: 3}
+  playerPos: {fileID: 0}
   speed: 0.5
