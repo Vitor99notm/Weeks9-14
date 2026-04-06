@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.ImputSystem;
+//using UnityEngine.ImputSystem;
 
 public class GunScript : MonoBehaviour
 {
@@ -12,9 +12,9 @@ public class GunScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		Vector2 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+		//Vector2 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
 
-        Vector2 direction = mousePos - (Vector2)transform.position;
-        transform.up = direction;
+        //Vector2 direction = mousePos - (Vector2)transform.position;
+        //transform.up = direction;
 	}
 }
