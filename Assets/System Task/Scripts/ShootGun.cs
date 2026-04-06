@@ -24,6 +24,7 @@ public class ShootGun : MonoBehaviour
 		transform.right = newPos;
         transform.up = newPos;
         transform.position = newPos;
+
 		if (newPos.x >= 16 || newPos.x <= -15)
         {
             speed = 0;
