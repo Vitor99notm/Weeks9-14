@@ -1,20 +1,23 @@
 using UnityEngine;
-//using UnityEngine.ImputSystem;
+using UnityEngine.InputSystem;
 
 public class GunScript : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+
+	void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
-		//Vector2 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+		Vector2 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
 
-        //Vector2 direction = mousePos - (Vector2)transform.position;
-        //transform.up = direction;
+        Vector2 direction = mousePos - (Vector2)transform.position;
+        transform.up = direction;
+
+
 	}
+
+
 }

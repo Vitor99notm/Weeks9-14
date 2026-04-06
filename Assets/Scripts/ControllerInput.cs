@@ -7,6 +7,11 @@ public class ControllerInput : MonoBehaviour
     public Vector2 movement;
     public Animator playerAnimator;
     public AudioSource SFX;
+
+    public GameObject bulletPrefab;
+    public GameObject spawnedBullet;
+    public ShootGun gunScript;
+
     void Start()
     {
         
@@ -29,9 +34,12 @@ public class ControllerInput : MonoBehaviour
 
     public void OnAttack(InputAction.CallbackContext context) 
     {
-        Debug.Log("Attack " + context.phase);
+        //Debug.Log("Attack " + context.phase);
         if (context.performed == true)
         {
+            spawnedBullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
+            gunScript = spawnedBullet.GetComponent<ShootGun>();
+
             SFX.Play();
         }
     }
