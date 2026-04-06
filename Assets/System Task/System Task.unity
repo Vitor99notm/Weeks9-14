@@ -5321,7 +5321,6 @@ GameObject:
   m_Component:
   - component: {fileID: 985095434}
   - component: {fileID: 985095433}
-  - component: {fileID: 985095435}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
@@ -5396,27 +5395,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 985095432}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: -0.41, y: 0.74, z: 0}
-  m_LocalScale: {x: 0.9875, y: 0.34584373, z: 1}
+  m_LocalScale: {x: 0.9875, y: 0.34584364, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1112716426}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
---- !u!114 &985095435
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 985095432}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f310fbec60670f444bc6c8e9ae4e9b5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  isKeyPressed: 0
-  speed: 5
 --- !u!4 &1112716426 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5036939286482999234, guid: 79600e7a0b3a44f4eacd2f1a8562c2c4, type: 3}
@@ -5752,6 +5737,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -4994335896286950823, guid: 79600e7a0b3a44f4eacd2f1a8562c2c4, type: 3}
+      propertyPath: m_DefaultActionMap
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 761738518374556790, guid: 79600e7a0b3a44f4eacd2f1a8562c2c4, type: 3}
       propertyPath: m_Name
       value: Player
@@ -5798,7 +5787,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 5036939286482999234, guid: 79600e7a0b3a44f4eacd2f1a8562c2c4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 985095434}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79600e7a0b3a44f4eacd2f1a8562c2c4, type: 3}
 --- !u!1001 &4495629030318750396
@@ -5872,4 +5864,3 @@ SceneRoots:
   - {fileID: 4495629030318750396}
   - {fileID: 2047967602616584286}
   - {fileID: 315958922}
-  - {fileID: 985095434}

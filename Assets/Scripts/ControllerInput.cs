@@ -23,7 +23,7 @@ public class ControllerInput : MonoBehaviour
     public void OnMove(InputAction.CallbackContext context)
     {
        movement = context.ReadValue<Vector2>();
-       playerAnimator.SetBool("isRunning", true);
+       //playerAnimator.SetBool("isRunning", true);
     }
 
 
