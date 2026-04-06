@@ -1,3 +1,5 @@
+using NUnit.Framework;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class ZombieSpawner : MonoBehaviour
@@ -8,12 +10,14 @@ public class ZombieSpawner : MonoBehaviour
 	public GameObject zombiePrefab;
 	public GameObject spawnedZombie;
 
-	public ControllerInput playerPos;
+	public Transform player;
 
 	public float timeV = 0;
 	public float timeMV = 5;
 
 	public Zombie zombieScript;
+
+	//public List<GameObject> zombie;
 
 	void Start()
     {
@@ -30,12 +34,13 @@ public class ZombieSpawner : MonoBehaviour
 		//Spawn new zombie code
 		if (timeV > timeMV)
 		{
-			playerPos = GetComponent<ControllerInput>();
 
 			//Spawns the zombies
 			spawnedZombie = Instantiate(zombiePrefab, transform.position, transform.rotation);
 
-			zombieScript = spawnedZombie.GetComponent<Zombie>();
+			spawnedZombie.GetComponent<Zombie>().playerPos = player;
+			
+			//Resets Timer
 			timeV = 0;
 
 			//Sets a random position for the spawner

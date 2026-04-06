@@ -3,6 +3,7 @@ using UnityEngine.InputSystem;
 
 public class GunScript : MonoBehaviour
 {
+    public GameObject gunBarrel;
 
 	void Start()
     {

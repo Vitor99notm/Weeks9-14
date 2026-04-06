@@ -5,6 +5,7 @@ public class Zombie : MonoBehaviour
 {
 
     //Keeps track of the players current position so that later code can use it to make zombie follow the player
+    //public GetPlayerPos playerPos;
     public Transform playerPos;
     public float speed = 1f;
 
@@ -18,8 +19,7 @@ public class Zombie : MonoBehaviour
     {
 
         //Calculates the player position - the zombie position and makes the zombie follow the player
-        //playerPos = GameObject.Find("Player").transform;
-		Vector2 direction = playerPos.position - transform.position;
+		Vector2 direction = playerPos.transform.position - transform.position;
         transform.position += (Vector3)direction * speed * Time.deltaTime;
         
         

@@ -164,6 +164,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c4af107ff17ed0479bc93159b22a5e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GunScript
+  gunBarrel: {fileID: 985095432}
+  speed: 5
 --- !u!1 &315958920
 GameObject:
   m_ObjectHideFlags: 0
@@ -195,7 +197,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ZombieSpawner
   zombiePrefab: {fileID: 5349854874723899781, guid: 2ff4a1966e3df5c4da27d7297cf3e193, type: 3}
   spawnedZombie: {fileID: 0}
-  playerPos: {fileID: 2121950598}
+  player: {fileID: 1112716426}
   timeV: 0
   timeMV: 5
   zombieScript: {fileID: 0}
@@ -5582,6 +5584,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5036939286482999234, guid: 79600e7a0b3a44f4eacd2f1a8562c2c4, type: 3}
   m_PrefabInstance: {fileID: 2047967602616584286}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1116562718 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 761738518374556790, guid: 79600e7a0b3a44f4eacd2f1a8562c2c4, type: 3}
+  m_PrefabInstance: {fileID: 2047967602616584286}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1758935114
 GameObject:
   m_ObjectHideFlags: 0
@@ -5909,12 +5916,24 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: -1035773448263881610, guid: 79600e7a0b3a44f4eacd2f1a8562c2c4, type: 3}
   m_PrefabInstance: {fileID: 2047967602616584286}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1116562718}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a315426e84f25d445a210b4a8f1ccc9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ControllerInput
+--- !u!114 &2121950601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1116562718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14f37e79eb5a4a148b83f8e803fe7cfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GetPlayerPos
 --- !u!1001 &2047967602616584286
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6013,7 +6032,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5036939286482999234, guid: 79600e7a0b3a44f4eacd2f1a8562c2c4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 253619907}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 761738518374556790, guid: 79600e7a0b3a44f4eacd2f1a8562c2c4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2121950601}
   m_SourcePrefab: {fileID: 100100000, guid: 79600e7a0b3a44f4eacd2f1a8562c2c4, type: 3}
 --- !u!1001 &4495629030318750396
 PrefabInstance:
