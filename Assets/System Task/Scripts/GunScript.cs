@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.ImputSystem;
 
 public class GunScript : MonoBehaviour
 {
