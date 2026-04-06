@@ -164,8 +164,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c4af107ff17ed0479bc93159b22a5e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GunScript
-  gunBarrel: {fileID: 985095432}
-  speed: 5
+  gunBarrel: {fileID: 0}
+  bulletPrefab: {fileID: 5937079678955869742, guid: 26c9fefee49ef964b90b5fdb9f41c04b, type: 3}
+  spawnedBullet: {fileID: 0}
+  bullet: {fileID: 985095434}
+  shootGun: {fileID: 0}
+  SFX: {fileID: 555079342}
 --- !u!1 &315958920
 GameObject:
   m_ObjectHideFlags: 0
@@ -198,9 +202,9 @@ MonoBehaviour:
   zombiePrefab: {fileID: 5349854874723899781, guid: 2ff4a1966e3df5c4da27d7297cf3e193, type: 3}
   spawnedZombie: {fileID: 0}
   player: {fileID: 1112716426}
+  zombieScript: {fileID: 0}
   timeV: 0
   timeMV: 5
-  zombieScript: {fileID: 0}
 --- !u!4 &315958922
 Transform:
   m_ObjectHideFlags: 0
@@ -5911,17 +5915,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2121950598 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: -1035773448263881610, guid: 79600e7a0b3a44f4eacd2f1a8562c2c4, type: 3}
-  m_PrefabInstance: {fileID: 2047967602616584286}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1116562718}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a315426e84f25d445a210b4a8f1ccc9b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ControllerInput
 --- !u!114 &2121950601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5957,18 +5950,18 @@ PrefabInstance:
     - target: {fileID: -4994335896286950823, guid: 79600e7a0b3a44f4eacd2f1a8562c2c4, type: 3}
       propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2121950598}
+      objectReference: {fileID: 253619908}
     - target: {fileID: -4994335896286950823, guid: 79600e7a0b3a44f4eacd2f1a8562c2c4, type: 3}
       propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -4994335896286950823, guid: 79600e7a0b3a44f4eacd2f1a8562c2c4, type: 3}
       propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnAttack
+      value: OnShoot
       objectReference: {fileID: 0}
     - target: {fileID: -4994335896286950823, guid: 79600e7a0b3a44f4eacd2f1a8562c2c4, type: 3}
       propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: ControllerInput, Assembly-CSharp
+      value: GunScript, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: -4994335896286950823, guid: 79600e7a0b3a44f4eacd2f1a8562c2c4, type: 3}
       propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -5978,6 +5971,10 @@ PrefabInstance:
       propertyPath: SFX
       value: 
       objectReference: {fileID: 555079342}
+    - target: {fileID: -1035773448263881610, guid: 79600e7a0b3a44f4eacd2f1a8562c2c4, type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 985095434}
     - target: {fileID: -1035773448263881610, guid: 79600e7a0b3a44f4eacd2f1a8562c2c4, type: 3}
       propertyPath: bulletPrefab
       value: 

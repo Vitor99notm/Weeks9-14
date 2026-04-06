@@ -9,17 +9,15 @@ public class ZombieSpawner : MonoBehaviour
 
 	public GameObject zombiePrefab;
 	public GameObject spawnedZombie;
-
 	public Transform player;
-
-	public float timeV = 0;
-	public float timeMV = 5;
-
 	public Zombie zombieScript;
 
-	//public List<GameObject> zombie;
+    public float timeV = 0;
+    public float timeMV = 5;
 
-	void Start()
+    //public List<GameObject> zombie;
+
+    void Start()
     {
         
     }

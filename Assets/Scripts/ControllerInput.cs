@@ -10,7 +10,9 @@ public class ControllerInput : MonoBehaviour
 
     public GameObject bulletPrefab;
     public GameObject spawnedBullet;
-    public ShootGun gunScript;
+
+    public Transform bullet;
+    public ShootGun shootGun;
 
     void Start()
     {
@@ -38,7 +40,7 @@ public class ControllerInput : MonoBehaviour
         if (context.performed == true)
         {
             spawnedBullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
-            gunScript = spawnedBullet.GetComponent<ShootGun>();
+            spawnedBullet.GetComponent<ShootGun>().gunPos = bullet;
 
             SFX.Play();
         }
