@@ -7,6 +7,9 @@ public class ZombieSpawner : MonoBehaviour
 
 	public GameObject zombiePrefab;
 	public GameObject spawnedZombie;
+
+	public ControllerInput playerPos;
+
 	public float timeV = 0;
 	public float timeMV = 5;
 
@@ -27,6 +30,8 @@ public class ZombieSpawner : MonoBehaviour
 		//Spawn new zombie code
 		if (timeV > timeMV)
 		{
+			playerPos = GetComponent<ControllerInput>();
+
 			//Spawns the zombies
 			spawnedZombie = Instantiate(zombiePrefab, transform.position, transform.rotation);
 
