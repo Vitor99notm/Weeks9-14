@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class ShootGun : MonoBehaviour
 {
-    public float speed = 1f;
+    public float speed = 3f;
     //public Transform bulletPos;
 
     void Start()
@@ -21,8 +21,9 @@ public class ShootGun : MonoBehaviour
         Vector2 newPos = transform.position;
 		newPos.x += speed * Time.deltaTime;
 		newPos.y += speed * Time.deltaTime;
-		transform.position = newPos;
-
+		transform.right = newPos;
+        transform.up = newPos;
+        transform.position = newPos;
 		if (newPos.x >= 16 || newPos.x <= -15)
         {
             speed = 0;
