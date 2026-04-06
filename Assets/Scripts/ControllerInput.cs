@@ -8,12 +8,6 @@ public class ControllerInput : MonoBehaviour
     public Animator playerAnimator;
     public AudioSource SFX;
 
-    public GameObject bulletPrefab;
-    public GameObject spawnedBullet;
-
-    public Transform bullet;
-    public ShootGun shootGun;
-
     void Start()
     {
         
@@ -39,8 +33,6 @@ public class ControllerInput : MonoBehaviour
         //Debug.Log("Attack " + context.phase);
         if (context.performed == true)
         {
-            spawnedBullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
-            spawnedBullet.GetComponent<ShootGun>().gunPos = bullet;
 
             SFX.Play();
         }
