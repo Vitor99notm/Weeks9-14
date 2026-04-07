@@ -105,4 +105,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Zombie
   playerPos: {fileID: 0}
+  bulletPos: {fileID: 0}
   speed: 0.5

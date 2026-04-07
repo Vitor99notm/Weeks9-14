@@ -1,28 +1,32 @@
 using NUnit.Framework;
 using System.Collections.Generic;
+using UnityEngine.Events;
 using UnityEngine;
 
 public class ZombieSpawner : MonoBehaviour
 {
 
 	//Spawner components
-
 	public GameObject zombiePrefab;
 	public GameObject spawnedZombie;
+
 	public Transform player;
+	public Transform bullet;
+
+	public GunScript g;
+
 	public Zombie zombieScript;
 
     public float timeV = 0;
     public float timeMV = 5;
 
-    //public List<GameObject> zombie;
-
     void Start()
     {
-        
-    }
+		bullet = (Transform)g.spawnedBullet.transform;
 
-    void Update()
+	}
+
+	void Update()
     {
 		timeV += Time.deltaTime;
 
@@ -37,6 +41,8 @@ public class ZombieSpawner : MonoBehaviour
 			spawnedZombie = Instantiate(zombiePrefab, transform.position, transform.rotation);
 
 			spawnedZombie.GetComponent<Zombie>().playerPos = player;
+			spawnedZombie.GetComponent<Zombie>().bulletPos = bullet;
+
 			
 			//Resets Timer
 			timeV = 0;
@@ -45,6 +51,9 @@ public class ZombieSpawner : MonoBehaviour
 			randomPos.x = Random.Range(12, -12);
 			randomPos.y = Random.Range(5, -6);
 			transform.position = randomPos;
+
+
 		}
+
 	}
 }

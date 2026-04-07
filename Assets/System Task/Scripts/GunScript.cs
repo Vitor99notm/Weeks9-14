@@ -10,7 +10,6 @@ public class GunScript : MonoBehaviour
 
     public Transform bullet;
     public ShootGun shootGun;
-
     public AudioSource SFX;
 
     void Start()
@@ -38,7 +37,7 @@ public class GunScript : MonoBehaviour
             spawnedBullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
             spawnedBullet.GetComponent<ShootGun>().gunPos = bullet;
 
-            SFX.Play();
+			SFX.Play();
         }
     }
 
