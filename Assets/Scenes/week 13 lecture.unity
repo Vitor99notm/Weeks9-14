@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.PlayerInputManager
   m_NotificationBehavior: 2
-  m_MaxPlayerCount: 2
+  m_MaxPlayerCount: 3
   m_AllowJoining: 1
   m_JoinBehavior: 0
   m_PlayerJoinedEvent:
@@ -223,6 +223,7 @@ MonoBehaviour:
   playerSprites:
   - {fileID: -9003423962299339650, guid: d7dbc61aeea9a7b449e22e3544f8bdea, type: 3}
   - {fileID: -2751330272638895622, guid: a2e90721d9c75e840b0cd4ae78df937f, type: 3}
+  - {fileID: 3326458103128800172, guid: 98585733797ce2b459fcb9154111a067, type: 3}
   players: []
   SFX: {fileID: 1904914725}
 --- !u!1 &1047657655
@@ -477,7 +478,7 @@ AudioSource:
   m_Resource: {fileID: 8300000, guid: 215d6d45b7901a940afb8d64c9ab109a, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
-  m_Pitch: 1
+  m_Pitch: 0.35
   Loop: 0
   Mute: 0
   Spatialize: 0

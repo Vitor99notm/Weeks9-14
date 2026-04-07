@@ -20,17 +20,23 @@ public class LocalMultiplayerController : MonoBehaviour
     public AudioSource attackSound;
 
     Coroutine thePlayerAttackCoroutine;
+    Coroutine thePlayerDashCoroutine;
 
     void Update()
     {
+        //Movement for player
+        
         transform.position += (Vector3)movementInput * speed * Time.deltaTime;
+
     }
 
     public void OnMove(InputAction.CallbackContext context)
     {
+        //When WASD/Controller pad is pressed move player
        movementInput = context.ReadValue<Vector2>();
     }
 
+    //Makes player attack another player
     public void OnAttack(InputAction.CallbackContext context) 
     {
         if (context.performed) 
@@ -48,6 +54,22 @@ public class LocalMultiplayerController : MonoBehaviour
         
     }
 
+    //Makes player go faster when pressed
+    public void OnDash(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            if (thePlayerDashCoroutine != null) 
+            {
+                StopCoroutine(thePlayerDashCoroutine);
+            }
+            Debug.Log("PLAYER " + playerInput.playerIndex + " IS GOING FAST");
+            thePlayerDashCoroutine = StartCoroutine(PlayerDash());
+
+        }
+
+    }
+
     IEnumerator StartAttack()
     {
         float t = 0;
@@ -60,5 +82,22 @@ public class LocalMultiplayerController : MonoBehaviour
 
         }
 
+    }
+
+    IEnumerator PlayerDash()
+    {
+        float t = Time.deltaTime;
+
+        while (t < 1)
+        {
+            speed = speed + 10;
+            if (t >= 1)
+            {
+                speed = 5;
+                t = 0;
+                yield return new WaitForSeconds(speed);
+            }
+            
+        }
     }
 }
