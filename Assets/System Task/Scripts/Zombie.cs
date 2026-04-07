@@ -24,13 +24,13 @@ public class Zombie : MonoBehaviour
         transform.position += (Vector3)direction * speed * Time.deltaTime;
 
         //Check if bullet is near zombie
-        float distance = Vector2.Distance(transform.position, bulletPos.position);
+        //float distance = Vector2.Distance(transform.position, bulletPos.position);
 
 
-        if (distance < 0.8)
-        {
-            Destroy(gameObject);
-        }
+        //if (distance < 0.8)
+        //{
+           // Destroy(gameObject);
+        //}
 
 
     }

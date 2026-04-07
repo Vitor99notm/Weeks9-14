@@ -22,7 +22,7 @@ public class ZombieSpawner : MonoBehaviour
 
     void Start()
     {
-		bullet = (Transform)g.spawnedBullet.transform;
+		//bullet = (Transform)g.spawnedBullet.transform;
 
 	}
 
@@ -41,7 +41,7 @@ public class ZombieSpawner : MonoBehaviour
 			spawnedZombie = Instantiate(zombiePrefab, transform.position, transform.rotation);
 
 			spawnedZombie.GetComponent<Zombie>().playerPos = player;
-			spawnedZombie.GetComponent<Zombie>().bulletPos = bullet;
+			//spawnedZombie.GetComponent<Zombie>().bulletPos = bullet;
 
 			
 			//Resets Timer
