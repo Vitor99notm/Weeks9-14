@@ -4,12 +4,18 @@ using UnityEngine.InputSystem;
 
 public class LocalMultiplayerController : MonoBehaviour
 {
+    //Variable to allow LocalMultiplayerManager to access this script
     public LocalMultiplayerManager manager;
     public PlayerInput playerInput;
+
+    //Transform for the attacking Coroutine
     public Transform playerScale;
+
+    //Movement varibales for player
     public Vector2 movementInput;
     public float speed = 5f;
 
+    //Using an animation curve lets you set up when a scale ends and starts
     public AnimationCurve playerCurve;
     public AudioSource attackSound;
 
@@ -49,13 +55,10 @@ public class LocalMultiplayerController : MonoBehaviour
         while(t < 2)
         {
             t += Time.deltaTime;
-            //scale = t * -1;
             playerScale.transform.localScale = Vector3.one * playerCurve.Evaluate(t);
             yield return null;
 
         }
-
-
 
     }
 }
