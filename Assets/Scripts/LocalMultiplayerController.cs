@@ -86,18 +86,12 @@ public class LocalMultiplayerController : MonoBehaviour
 
     IEnumerator PlayerDash()
     {
-        float t = Time.deltaTime;
-
-        while (t < 1)
-        {
-            speed = speed + 10;
-            if (t >= 1)
-            {
-                speed = 5;
-                t = 0;
-                yield return new WaitForSeconds(speed);
-            }
+        float t = 0;
+        speed = speed + 10;
+        t = 0;
+        yield return new WaitForSeconds(1);
+        speed = 5;
             
-        }
+    
     }
 }
