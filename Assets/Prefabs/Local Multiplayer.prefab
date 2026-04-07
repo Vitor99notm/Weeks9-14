@@ -105,9 +105,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08d95c10d93ae81409bbd19b7720b5a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LocalMultiplayerController
+  manager: {fileID: 0}
   playerInput: {fileID: 2984740996301491352}
+  playerScale: {fileID: 7028927580199831520}
   movementInput: {x: 0, y: 0}
   speed: 5
+  playerCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1.8839
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.37407902
+      value: 2.2094162
+      inSlope: 0.06773471
+      outSlope: 0.06773471
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.7838072
+      value: 1.9738699
+      inSlope: -0.6117809
+      outSlope: -0.6117809
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1.8839
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &2984740996301491352
 MonoBehaviour:
   m_ObjectHideFlags: 0
